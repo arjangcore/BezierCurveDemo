@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+//using System.Collections;
 
 public class GameObjectDragAndDrop : MonoBehaviour
 {
@@ -11,11 +11,12 @@ public class GameObjectDragAndDrop : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-
-				if (Input.GetMouseButtonDown (0)) {
+				if (Input.GetMouseButtonDown (0))
+                {
 						RaycastHit hitInfo;
 						target = ReturnClickedObject (out hitInfo);
-						if (target != null) {
+						if (target != null)
+                        {
 								isMouseDrag = true;
 								//Convert world position to screen position.
 								screenPosition = Camera.main.WorldToScreenPoint (target.transform.position);

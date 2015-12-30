@@ -18,7 +18,7 @@ public class Bezier : MonoBehaviour
             lineRenderer = GetComponent<LineRenderer>();
         }
         lineRenderer.sortingLayerID = layerOrder;
-        curveCount = (int)controlPoints.Length / 3;
+        curveCount = controlPoints.Length / 3;
     }
 
     void Update()
@@ -36,9 +36,9 @@ public class Bezier : MonoBehaviour
             {
                 float t = i / (float)SEGMENT_COUNT;
                 int nodeIndex = j * 3;
-                Vector3 pixel = CalculateCubicBezierPoint(t, controlPoints [nodeIndex].position, controlPoints [nodeIndex + 1].position, controlPoints [nodeIndex + 2].position, controlPoints [nodeIndex + 3].position);
+                Vector3 point = CalculateCubicBezierPoint(t, controlPoints [nodeIndex].position, controlPoints [nodeIndex + 1].position, controlPoints [nodeIndex + 2].position, controlPoints [nodeIndex + 3].position);
                 lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
-                lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);
+                lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), point);
             }
             
         }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+//using System.Collections;
 [RequireComponent(typeof(LineRenderer))]
 public class Line : MonoBehaviour {
 
